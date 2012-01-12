@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  appointment: 
+  repeat_type: MyString
+  repeat_index: 1
+  days_of_week: MyString
+  dates_of_month: MyString
+  months_of_year: MyString
+  week_number: MyString
+  end_by_occurance: 1
+  end_by_date: 2012-01-12
+
+two:
+  appointment: 
+  repeat_type: MyString
+  repeat_index: 1
+  days_of_week: MyString
+  dates_of_month: MyString
+  months_of_year: MyString
+  week_number: MyString
+  end_by_occurance: 1
+  end_by_date: 2012-01-12

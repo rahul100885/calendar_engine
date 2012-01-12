@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  location: MyString
+  priority: MyString
+  status: MyString
+  percentage: 1
+  description: MyText
+  start_date: 2012-01-12
+  due_date: 2012-01-12
+  calendar: 
+
+two:
+  title: MyString
+  location: MyString
+  priority: MyString
+  status: MyString
+  percentage: 1
+  description: MyText
+  start_date: 2012-01-12
+  due_date: 2012-01-12
+  calendar: 

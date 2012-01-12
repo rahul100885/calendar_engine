@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  location: MyString
+  show_as: MyString
+  mark_as: MyString
+  all_day: false
+  start_date: 2012-01-12
+  end_date: 2012-01-12
+  start_time: 2012-01-12 18:18:18
+  end_time: 2012-01-12 18:18:18
+  attendees: MyText
+  description: MyString
+  calendar: 
+
+two:
+  title: MyString
+  location: MyString
+  show_as: MyString
+  mark_as: MyString
+  all_day: false
+  start_date: 2012-01-12
+  end_date: 2012-01-12
+  start_time: 2012-01-12 18:18:18
+  end_time: 2012-01-12 18:18:18
+  attendees: MyText
+  description: MyString
+  calendar: 

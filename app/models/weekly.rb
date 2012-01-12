@@ -1,0 +1,2 @@
+class Weekly < Recurrence
+end

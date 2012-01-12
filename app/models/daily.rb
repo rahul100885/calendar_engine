@@ -1,0 +1,2 @@
+class Daily < Recurrence
+end

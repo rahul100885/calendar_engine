@@ -1,0 +1,150 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2012-01-12 18:15:20) [GET]
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 37ms (View: 1, DB: 0) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCalendars (20120112124536)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPGError: ERROR: relation "calendars" already exists
+: CREATE TABLE "calendars" ("id" serial primary key, "name" character varying(255), "cal_type" character varying(255) DEFAULT 'internal', "url" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (41.8ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;36;1mSQL (88.9ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCalendars (20120112124536)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (125.3ms)[0m   [0mCREATE TABLE "calendars" ("id" serial primary key, "name" character varying(255), "cal_type" character varying(255) DEFAULT 'internal', "url" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120112124536')[0m
+  [4;35;1mSQL (12.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (8.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCalendars (20120112124536)
+Migrating to CreateAppointments (20120112124818)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (158.5ms)[0m   [0mCREATE TABLE "appointments" ("id" serial primary key, "title" character varying(255), "location" character varying(255), "show_as" character varying(255), "mark_as" character varying(255), "all_day" boolean, "start_date" date, "end_date" date, "start_time" time, "end_time" time, "attendees" text, "description" character varying(255), "calendar_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120112124818')[0m
+  [4;35;1mSQL (16.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCalendars (20120112124536)
+Migrating to CreateAppointments (20120112124818)
+Migrating to CreateRecurrences (20120112125017)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (186.0ms)[0m   [0mCREATE TABLE "recurrences" ("id" serial primary key, "appointment_id" integer, "repeat_type" character varying(255), "repeat_index" integer, "days_of_week" character varying(255), "dates_of_month" character varying(255), "months_of_year" character varying(255), "week_number" character varying(255), "end_by_occurance" integer, "end_by_date" date, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120112125017')[0m
+  [4;35;1mSQL (15.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCalendars (20120112124536)
+Migrating to CreateAppointments (20120112124818)
+Migrating to CreateRecurrences (20120112125017)
+Migrating to CreateTodos (20120112125443)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (145.2ms)[0m   [0mCREATE TABLE "todos" ("id" serial primary key, "title" character varying(255), "location" character varying(255), "priority" character varying(255), "status" character varying(255), "percentage" integer, "description" text, "start_date" date, "due_date" date, "calendar_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120112125443')[0m
+  [4;35;1mSQL (16.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCalendars (20120112124536)
+Migrating to CreateAppointments (20120112124818)
+Migrating to CreateRecurrences (20120112125017)
+Migrating to CreateTodos (20120112125443)
+Migrating to CreateReminders (20120112125621)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (99.7ms)[0m   [0mCREATE TABLE "reminders" ("id" serial primary key, "event_id" integer, "event_type" character varying(255), "duration" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20120112125621')[0m
+  [4;35;1mSQL (15.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mINSERT INTO "calendars" ("name", "cal_type", "created_at", "updated_at", "url") VALUES('Default', 'internal', '2012-01-12 14:03:57.835878', '2012-01-12 14:03:57.835878', NULL) RETURNING "id"[0m
+  [4;35;1mSQL (12.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "appointments" ("show_as", "start_date", "location", "end_time", "created_at", "title", "attendees", "updated_at", "mark_as", "description", "calendar_id", "end_date", "all_day", "start_time") VALUES('Busy', '2012-01-15 14:24:19.644083', 'Pune', '2000-01-01 12:00:00.000000', '2012-01-12 14:27:25.980485', 'Demo App 1', NULL, '2012-01-12 14:27:25.980485', 'Public', 'Appointment desc', 1, '2012-01-15 14:24:26.844186', 'f', '2000-01-01 12:00:00.000000') RETURNING "id"[0m
+  [4;36;1mSQL (22.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRecurrence Load (0.6ms)[0m   [0mSELECT * FROM "recurrences" WHERE ("recurrences".appointment_id = 1) LIMIT 1[0m
+  [4;36;1mRecurrence Load (0.4ms)[0m   [0;1mSELECT * FROM "recurrences" WHERE ("recurrences".appointment_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO "recurrences" ("end_by_occurance", "created_at", "days_of_week", "months_of_year", "updated_at", "repeat_index", "dates_of_month", "repeat_type", "appointment_id", "week_number", "end_by_date") VALUES(NULL, '2012-01-12 14:29:37.170280', NULL, NULL, '2012-01-12 14:29:37.170280', 1, NULL, 'Daily', 1, NULL, NULL) RETURNING "id"[0m
+  [4;35;1mSQL (12.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET search_path TO public[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP DATABASE IF EXISTS "calendar_engine_test"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET search_path TO public[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (725.2ms)[0m   [0mCREATE DATABASE "calendar_engine_test" ENCODING = 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (144.9ms)[0m   [0mCREATE TABLE "appointments" ("id" serial primary key, "title" character varying(255), "location" character varying(255), "show_as" character varying(255), "mark_as" character varying(255), "all_day" boolean, "start_date" date, "end_date" date, "start_time" time, "end_time" time, "attendees" text, "description" character varying(255), "calendar_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (141.7ms)[0m   [0;1mCREATE TABLE "calendars" ("id" serial primary key, "name" character varying(255), "cal_type" character varying(255) DEFAULT 'internal', "url" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (123.0ms)[0m   [0mCREATE TABLE "recurrences" ("id" serial primary key, "appointment_id" integer, "repeat_type" character varying(255), "repeat_index" integer, "days_of_week" character varying(255), "dates_of_month" character varying(255), "months_of_year" character varying(255), "week_number" character varying(255), "end_by_occurance" integer, "end_by_date" date, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (81.1ms)[0m   [0;1mCREATE TABLE "reminders" ("id" serial primary key, "event_id" integer, "event_type" character varying(255), "duration" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (139.7ms)[0m   [0mCREATE TABLE "todos" ("id" serial primary key, "title" character varying(255), "location" character varying(255), "priority" character varying(255), "status" character varying(255), "percentage" integer, "description" text, "start_date" date, "due_date" date, "calendar_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;36;1mSQL (6.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (72.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (6.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120112125621')[0m
+  [4;36;1mSQL (8.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120112124818')[0m
+  [4;35;1mSQL (8.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120112125443')[0m
+  [4;36;1mSQL (8.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20120112125017')[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20120112124536')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mAppointment Load (0.6ms)[0m   [0mSELECT * FROM "appointments" [0m
+  [4;36;1mAppointment Load (0.4ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+  [4;35;1mAppointment Load (0.4ms)[0m   [0mSELECT * FROM "appointments" [0m
+  [4;36;1mRecurrence Load (0.6ms)[0m   [0;1mSELECT * FROM "recurrences" WHERE ("recurrences".appointment_id = 1) LIMIT 1[0m
+  [4;35;1mAppointment Load (0.4ms)[0m   [0mSELECT * FROM "appointments" [0m
+  [4;36;1mRecurrence Load (0.3ms)[0m   [0;1mSELECT * FROM "recurrences" WHERE ("recurrences".appointment_id = 1) LIMIT 1[0m
+  [4;35;1mAppointment Load (0.4ms)[0m   [0mSELECT * FROM "appointments" [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO "appointments" ("show_as", "start_date", "created_at", "end_time", "location", "title", "attendees", "updated_at", "mark_as", "calendar_id", "description", "end_date", "all_day", "start_time") VALUES('Busy', '2012-01-15', '2012-01-12 14:27:25.980485', '2000-01-01 12:00:00.000000', 'Pune', 'Demo App 2', NULL, '2012-01-12 14:27:25.980485', 'Public', 1, 'Appointment desc', '2012-01-15', 'f', '2000-01-01 12:00:00.000000') RETURNING "id"[0m
+  [4;36;1mSQL (15.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRecurrence Load (0.3ms)[0m   [0mSELECT * FROM "recurrences" WHERE ("recurrences".appointment_id = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "recurrences" ("end_by_occurance", "created_at", "days_of_week", "months_of_year", "updated_at", "repeat_index", "dates_of_month", "repeat_type", "appointment_id", "week_number", "end_by_date") VALUES(NULL, '2012-01-12 15:18:04.581645', NULL, NULL, '2012-01-12 15:18:04.581645', 1, NULL, 'Weekly', 2, NULL, NULL) RETURNING "id"[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mAppointment Load (0.4ms)[0m   [0mSELECT * FROM "appointments" [0m
+  [4;36;1mAppointment Load (0.4ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+  [4;35;1mAppointment Load (0.4ms)[0m   [0mSELECT * FROM "appointments" [0m
+  [4;36;1mRecurrence Load (0.3ms)[0m   [0;1mSELECT * FROM "recurrences" WHERE ("recurrences".appointment_id = 2) LIMIT 1[0m
+  [4;35;1mAppointment Load (0.4ms)[0m   [0mSELECT * FROM "appointments" [0m
+  [4;36;1mRecurrence Load (0.3ms)[0m   [0;1mSELECT * FROM "recurrences" WHERE ("recurrences".appointment_id = 1) LIMIT 1[0m
