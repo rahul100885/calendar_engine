@@ -1,0 +1,2 @@
+class Yearly < Recurrence
+end
