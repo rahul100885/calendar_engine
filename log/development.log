@@ -148,3 +148,1058 @@ Migrating to CreateReminders (20120112125621)
   [4;36;1mRecurrence Load (0.3ms)[0m   [0;1mSELECT * FROM "recurrences" WHERE ("recurrences".appointment_id = 2) LIMIT 1[0m
   [4;35;1mAppointment Load (0.4ms)[0m   [0mSELECT * FROM "appointments" [0m
   [4;36;1mRecurrence Load (0.3ms)[0m   [0;1mSELECT * FROM "recurrences" WHERE ("recurrences".appointment_id = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO "appointments" ("show_as", "start_date", "location", "end_time", "created_at", "title", "attendees", "updated_at", "mark_as", "description", "calendar_id", "end_date", "all_day", "start_time") VALUES('Public', NULL, 'Mumbai', '2000-01-01 13:00:00.000000', '2012-01-18 08:36:57.607662', 'Meeting with ML''s', NULL, '2012-01-18 08:36:57.607662', NULL, NULL, 1, NULL, 'f', '2000-01-01 12:00:00.000000') RETURNING "id"[0m
+  [4;35;1mSQL (17.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "appointments" ("show_as", "start_date", "location", "end_time", "created_at", "title", "attendees", "updated_at", "mark_as", "description", "calendar_id", "end_date", "all_day", "start_time") VALUES('Public', NULL, 'Office', '2000-01-01 13:00:00.000000', '2012-01-18 08:38:02.922308', 'Architecture Review', NULL, '2012-01-18 08:38:02.922308', NULL, NULL, 1, NULL, 'f', '2000-01-01 12:00:00.000000') RETURNING "id"[0m
+  [4;36;1mSQL (17.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO "appointments" ("show_as", "start_date", "location", "end_time", "created_at", "title", "attendees", "updated_at", "mark_as", "description", "calendar_id", "end_date", "all_day", "start_time") VALUES('Public', NULL, 'Office', '2000-01-01 13:00:00.000000', '2012-01-18 08:38:48.457726', 'Architecture discussion', NULL, '2012-01-18 08:38:48.457726', NULL, NULL, 1, NULL, 'f', '2000-01-01 12:00:00.000000') RETURNING "id"[0m
+  [4;35;1mSQL (14.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO "appointments" ("show_as", "start_date", "location", "end_time", "created_at", "title", "attendees", "updated_at", "mark_as", "description", "calendar_id", "end_date", "all_day", "start_time") VALUES('Public', NULL, 'Office', NULL, '2012-01-18 08:39:34.984514', 'Cloud Meet', NULL, '2012-01-18 08:39:34.984514', NULL, NULL, 1, NULL, 't', NULL) RETURNING "id"[0m
+  [4;36;1mSQL (18.7ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 16:21:23) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:30:41) [GET]
+Rendering calendars/index
+ERROR: compiling _run_erb_app47views47calendars47index46html46erb RAISED compile error
+/home/rahul/workspace/calendar_engine/app/views/calendars/index.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+...at "\n\n    <script type='text/javascript'>\n\n      $(docum...
+                              ^
+/home/rahul/workspace/calendar_engine/app/views/calendars/index.html.erb:9: syntax error, unexpected tSTRING_BEG, expecting kDO or '{' or '('
+...<script type='text/javascript'>\n\n      $(document).ready(f...
+                              ^
+/home/rahul/workspace/calendar_engine/app/views/calendars/index.html.erb:35: syntax error, unexpected kENSURE, expecting ')'
+/home/rahul/workspace/calendar_engine/app/views/calendars/index.html.erb:37: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47calendars47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">\n  <head>\n    <meta http-equiv=\"content-type\" content=\"text/html;charset=UTF-8\" />\n    <title>Calendar</title>\n\n    "
+
+
+
+
+; @output_buffer.concat(( stylesheet_link_tag "/plugin/fullcalendar/fullcalendar.css" ).to_s); @output_buffer.concat "  \n    "
+; @output_buffer.concat(( stylesheet_link_tag '/plugin/fullcalendar/theme/theme.css" ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( javascript_include_tag "/plugin/fullcalendar/jquery/jquery-1.5.2.min.js" ).to_s); @output_buffer.concat "\n    "
+; @output_buffer.concat(( javascript_include_tag "/plugin/fullcalendar/fullcalendar.js" ).to_s); @output_buffer.concat "\n\n    <script type='text/javascript'>\n\n      $(document).ready(function() {\n   \n        $('#calendar').fullCalendar({\n          theme: true,\n          header: {\n            left: 'prev,next today',\n            center: 'title',\n            right: 'month,agendaWeek,agendaDay'\n          },\n          editable: true,\n          eventSources: [\n            \"http://localhost:3000/schedule/1\"\n          ]\n        });\n      });\n  </script>\n  </head>\n  <body>\n    <div id='calendar'></div>          \n  </body>\n</html>\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/rahul/workspace/calendar_engine/app/views/calendars/index.html.erb:37:in `compile!'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_view/renderable.rb:28:in `render'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_view/template.rb:205:in `render_template'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_view/base.rb:265:in `render'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/base.rb:1252:in `render_for_file'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/base.rb:936:in `render_without_benchmark'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/rvm/rubies/ree-1.8.7-2011.03/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/base.rb:1328:in `default_render'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/base.rb:1334:in `perform_action_without_filters'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/rvm/rubies/ree-1.8.7-2011.03/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/activesupport-2.3.14/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/flash.rb:151:in `perform_action'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `send'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/filters.rb:606:in `process'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/base.rb:391:in `process'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/base.rb:386:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/routing/route_set.rb:438:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/activerecord-2.3.14/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/activerecord-2.3.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/string_coercion.rb:25:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rack-1.1.3/lib/rack/head.rb:9:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rack-1.1.3/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/session/cookie_store.rb:99:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/failsafe.rb:26:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rack-1.1.3/lib/rack/lock.rb:11:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rack-1.1.3/lib/rack/lock.rb:11:in `synchronize'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rack-1.1.3/lib/rack/lock.rb:11:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/reloader.rb:34:in `run'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/actionpack-2.3.14/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rails-2.3.14/lib/rails/rack/static.rb:31:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rack-1.1.3/lib/rack/urlmap.rb:47:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rack-1.1.3/lib/rack/urlmap.rb:41:in `each'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rack-1.1.3/lib/rack/urlmap.rb:41:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rails-2.3.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rack-1.1.3/lib/rack/content_length.rb:13:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rack-1.1.3/lib/rack/chunked.rb:15:in `call'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rack-1.1.3/lib/rack/handler/mongrel.rb:67:in `process'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rack-1.1.3/lib/rack/handler/mongrel.rb:38:in `run'
+/usr/local/rvm/gems/ree-1.8.7-2011.03@livia_portal_2/gems/rails-2.3.14/lib/commands/server.rb:111
+/usr/local/rvm/rubies/ree-1.8.7-2011.03/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:54:in `gem_original_require'
+/usr/local/rvm/rubies/ree-1.8.7-2011.03/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:54:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/rahul/workspace/calendar_engine/app/views/calendars/index.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+...at "\n\n    <script type='text/javascript'>\n\n      $(docum...
+                              ^
+/home/rahul/workspace/calendar_engine/app/views/calendars/index.html.erb:9: syntax error, unexpected tSTRING_BEG, expecting kDO or '{' or '('
+...<script type='text/javascript'>\n\n      $(document).ready(f...
+                              ^
+/home/rahul/workspace/calendar_engine/app/views/calendars/index.html.erb:35: syntax error, unexpected kENSURE, expecting ')'
+/home/rahul/workspace/calendar_engine/app/views/calendars/index.html.erb:37: syntax error, unexpected kEND, expecting ')') on line #9 of app/views/calendars/index.html.erb:
+6:     <%= stylesheet_link_tag "/plugin/fullcalendar/fullcalendar.css" %>  
+7:     <%= stylesheet_link_tag '/plugin/fullcalendar/theme/theme.css" %>
+8:     <%= javascript_include_tag "/plugin/fullcalendar/jquery/jquery-1.5.2.min.js" %>
+9:     <%= javascript_include_tag "/plugin/fullcalendar/fullcalendar.js" %>
+10: 
+11:     <script type='text/javascript'>
+12: 
+
+    app/views/calendars/index.html.erb:37:in `compile!'
+
+Rendered rescues/_trace (27.2ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:31:18) [GET]
+Rendering calendars/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:31:18) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/fullcalendar.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:31:18) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/theme/theme.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:31:18) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/jquery/jquery-1.5.2.min.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:31:18) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/fullcalendar.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:31:22) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:31:22) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/fullcalendar.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:31:22) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/theme/theme.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:31:22) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/jquery/jquery-1.5.2.min.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:31:22) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/fullcalendar.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:33:06) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:06) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/fullcalendar.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:06) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/theme/theme.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:06) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/jquery/jquery-1.5.2.min.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:06) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/fullcalendar.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:33:08) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:08) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/fullcalendar.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:08) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/theme/theme.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:08) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/jquery/jquery-1.5.2.min.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:08) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/fullcalendar.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:33:23) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:23) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/fullcalendar.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:23) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/theme/theme.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:23) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/jquery/jquery-1.5.2.min.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:23) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/fullcalendar.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:33:33) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:33) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/fullcalendar.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:33) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/theme/theme.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:33) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/jquery/jquery-1.5.2.min.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:33:33) [GET]
+
+ActionController::RoutingError (No route matches "/plugin/fullcalendar/fullcalendar.js" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:34:13) [GET]
+Rendering calendars/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:34:13) [GET]
+  Parameters: {"end"=>"1328985000", "start"=>"1325356200", "_"=>"1326888253680"}
+
+ActionController::RoutingError (No route matches "/schedule/1" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:34:23) [GET]
+  Parameters: {"end"=>"1331404200", "start"=>"1327775400", "_"=>"1326888263097"}
+
+ActionController::RoutingError (No route matches "/schedule/1" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:34:24) [GET]
+  Parameters: {"end"=>"1333823400", "start"=>"1330194600", "_"=>"1326888264140"}
+
+ActionController::RoutingError (No route matches "/schedule/1" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:34:36) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:34:36) [GET]
+  Parameters: {"end"=>"1328985000", "start"=>"1325356200", "_"=>"1326888276514"}
+
+ActionController::RoutingError (No route matches "/schedule/1" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:34:57) [GET]
+Rendering calendars/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:34:57) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326888297909"}
+  [4;35;1mAppointment Load (0.9ms)[0m   [0mSELECT * FROM "appointments" [0m
+Completed in 22ms (View: 0, DB: 1) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326888297909]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:35:25) [GET]
+Rendering calendars/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:35:25) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326888325844"}
+  [4;36;1mAppointment Load (2.5ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+Completed in 16ms (View: 1, DB: 3) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326888325844]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:35:33) [GET]
+Rendering calendars/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:35:33) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326888333898"}
+  [4;35;1mAppointment Load (1.1ms)[0m   [0mSELECT * FROM "appointments" [0m
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326888333898]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:36:01) [GET]
+Rendering calendars/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:36:01) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326888361773"}
+  [4;36;1mAppointment Load (1.3ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+Completed in 14ms (View: 1, DB: 2) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326888361773]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:38:25) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:39:06) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326888546033"}
+  [4;35;1mAppointment Load (1.3ms)[0m   [0mSELECT * FROM "appointments" [0m
+Completed in 13ms (View: 1, DB: 1) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326888546033]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:39:06) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326888546042"}
+  [4;35;1mAppointment Load (1.3ms)[0m   [0mSELECT * FROM "appointments" [0m
+Completed in 12ms (View: 1, DB: 2) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326888546042]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:42:45) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:42:45) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326888765565"}
+  [4;36;1mAppointment Load (1.5ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+Completed in 13ms (View: 0, DB: 2) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326888765565]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:42:45) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:55:16) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:55:16) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326889516213"}
+  [4;36;1mAppointment Load (1.0ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+Completed in 11ms (View: 0, DB: 1) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326889516213]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:55:16) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2012-01-18 17:55:34) [GET]
+
+ActionController::RoutingError (No route matches "/calendar/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:55:36) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/calendars]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:55:36) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326889536920"}
+  [4;35;1mAppointment Load (1.0ms)[0m   [0mSELECT * FROM "appointments" [0m
+Completed in 14ms (View: 1, DB: 1) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326889536920]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:55:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAppointment Load (0.9ms)[0m   [0mSELECT * FROM "appointments" [0m
+Completed in 10ms (View: 0, DB: 1) | 200 OK [http://localhost/calendars/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:57:33) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:57:33) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326889653461"}
+  [4;36;1mAppointment Load (1.1ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+Completed in 11ms (View: 0, DB: 1) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326889653461]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:58:28) [GET]
+Rendering calendars/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:58:28) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326889708459"}
+  [4;35;1mAppointment Load (1.1ms)[0m   [0mSELECT * FROM "appointments" [0m
+Completed in 12ms (View: 0, DB: 1) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326889708459]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 17:58:47) [GET]
+Rendering calendars/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 17:58:47) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326889727328"}
+  [4;36;1mAppointment Load (2.0ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+Completed in 19ms (View: 0, DB: 2) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326889727328]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+  [4;35;1mAppointment Load (0.7ms)[0m   [0mSELECT * FROM "appointments" LIMIT 1[0m
+  [4;36;1mAppointment Load (0.5ms)[0m   [0;1mSELECT * FROM "appointments" LIMIT 1[0m
+  [4;35;1mAppointment Load (0.7ms)[0m   [0mSELECT * FROM "appointments" ORDER BY appointments.id DESC LIMIT 1[0m
+  [4;36;1mAppointment Load (0.4ms)[0m   [0;1mSELECT * FROM "appointments" WHERE ("appointments"."id" = 4) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 18:51:10) [GET]
+Rendering calendars/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 18:51:10) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326892870864"}
+  [4;35;1mAppointment Load (4.7ms)[0m   [0mSELECT * FROM "appointments" [0m
+
+NoMethodError (undefined method `strftime' for nil:NilClass):
+  app/controllers/calendars_controller.rb:12:in `show'
+  app/controllers/calendars_controller.rb:8:in `each'
+  app/controllers/calendars_controller.rb:8:in `show'
+
+Rendered rescues/_trace (24.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 18:51:12) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 18:51:12) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326892872208"}
+  [4;36;1mAppointment Load (0.9ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+
+NoMethodError (undefined method `strftime' for nil:NilClass):
+  app/controllers/calendars_controller.rb:12:in `show'
+  app/controllers/calendars_controller.rb:8:in `each'
+  app/controllers/calendars_controller.rb:8:in `show'
+
+Rendered rescues/_trace (68.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 18:51:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAppointment Load (1.7ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+
+NoMethodError (undefined method `strftime' for nil:NilClass):
+  app/controllers/calendars_controller.rb:12:in `show'
+  app/controllers/calendars_controller.rb:8:in `each'
+  app/controllers/calendars_controller.rb:8:in `show'
+
+Rendered rescues/_trace (25.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 18:55:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAppointment Load (0.8ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+
+NoMethodError (undefined method `strftime' for nil:NilClass):
+  app/controllers/calendars_controller.rb:12:in `show'
+  app/controllers/calendars_controller.rb:8:in `each'
+  app/controllers/calendars_controller.rb:8:in `show'
+
+Rendered rescues/_trace (24.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 18:55:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAppointment Load (0.9ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+
+NoMethodError (undefined method `strftime' for nil:NilClass):
+  app/controllers/calendars_controller.rb:12:in `show'
+  app/controllers/calendars_controller.rb:8:in `each'
+  app/controllers/calendars_controller.rb:8:in `show'
+
+Rendered rescues/_trace (23.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 20:10:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAppointment Load (0.8ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+
+NoMethodError (undefined method `strftime' for nil:NilClass):
+  app/controllers/calendars_controller.rb:12:in `show'
+  app/controllers/calendars_controller.rb:8:in `each'
+  app/controllers/calendars_controller.rb:8:in `show'
+
+Rendered rescues/_trace (24.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 20:10:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAppointment Load (1.0ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+
+NoMethodError (undefined method `strftime' for nil:NilClass):
+  app/controllers/calendars_controller.rb:12:in `show'
+  app/controllers/calendars_controller.rb:8:in `each'
+  app/controllers/calendars_controller.rb:8:in `show'
+
+Rendered rescues/_trace (23.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 20:10:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mAppointment Load (0.9ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+
+NoMethodError (undefined method `strftime' for nil:NilClass):
+  app/controllers/calendars_controller.rb:12:in `show'
+  app/controllers/calendars_controller.rb:8:in `each'
+  app/controllers/calendars_controller.rb:8:in `show'
+
+Rendered rescues/_trace (24.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mAppointment Load (0.6ms)[0m   [0mSELECT * FROM "appointments" ORDER BY appointments.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 20:12:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAppointment Load (0.9ms)[0m   [0mSELECT * FROM "appointments" [0m
+
+NoMethodError (undefined method `strftime' for nil:NilClass):
+  app/controllers/calendars_controller.rb:12:in `show'
+  app/controllers/calendars_controller.rb:8:in `each'
+  app/controllers/calendars_controller.rb:8:in `show'
+
+Rendered rescues/_trace (23.4ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 20:14:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mAppointment Load (0.8ms)[0m   [0mSELECT * FROM "appointments" [0m
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/calendars/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 20:14:14) [GET]
+Rendering calendars/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 20:14:14) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326897854414"}
+  [4;36;1mAppointment Load (2.2ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+Completed in 17ms (View: 0, DB: 2) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326897854414]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 20:14:20) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 20:14:20) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326897860567"}
+  [4;35;1mAppointment Load (1.1ms)[0m   [0mSELECT * FROM "appointments" [0m
+Completed in 11ms (View: 0, DB: 1) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326897860567]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 20:14:53) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 20:14:53) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326897893276"}
+  [4;36;1mAppointment Load (1.3ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+Completed in 15ms (View: 0, DB: 1) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326897893276]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 20:15:03) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 20:15:03) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326897903698"}
+  [4;35;1mAppointment Load (1.2ms)[0m   [0mSELECT * FROM "appointments" [0m
+Completed in 16ms (View: 1, DB: 1) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326897903698]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET standard_conforming_strings = on[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#index (for 127.0.0.1 at 2012-01-18 20:15:04) [GET]
+Rendering calendars/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET standard_conforming_strings = on[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CalendarsController#show (for 127.0.0.1 at 2012-01-18 20:15:05) [GET]
+  Parameters: {"id"=>"1", "end"=>"1328985000", "start"=>"1325356200", "_"=>"1326897905018"}
+  [4;36;1mAppointment Load (1.1ms)[0m   [0;1mSELECT * FROM "appointments" [0m
+Completed in 13ms (View: 0, DB: 1) | 200 OK [http://localhost/calendars/1?start=1325356200&end=1328985000&_=1326897905018]
