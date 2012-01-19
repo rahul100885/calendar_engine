@@ -3,48 +3,73 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Calendar</title>
 
-    <%= stylesheet_link_tag "/plugins/fullcalendar/fullcalendar.css" %>  
+    <%= stylesheet_link_tag "/plugins/fullcalendar/fullcalendar.css" %>
     <%= stylesheet_link_tag "/plugins/fullcalendar/theme/theme.css" %>
+    <%= stylesheet_link_tag "/stylesheets/calendar.css" %>
+
+    <%= javascript_include_tag "custom_calendar.js" %>
     <%= javascript_include_tag "/plugins/fullcalendar/jquery/jquery-1.5.2.min.js" %>
     <%= javascript_include_tag "/plugins/fullcalendar/fullcalendar.js" %>
 
     <script type='text/javascript'>
-
       $(document).ready(function() {
-   
-        $('#calendar').fullCalendar({
-          theme: true,
-          header: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'month,agendaWeek,agendaDay'
-          },
-          editable: true,
-          eventSources: [
-            "http://localhost:3000/calendars/1"
-          ]
+
+        showCalendar();
+
+        $('#calendar_check_box').click(function(){
+          if($('#calendar_check_box').attr('checked') == false ){           
+            hideCalendar();
+          }
+          else{
+            showCalendar();
+          }
         });
+
+        function hideCalendar() {
+          $('#calendar').html("");
+          $('#calendar').fullCalendar({
+            theme: true,
+            header: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'month,agendaWeek,agendaDay'
+            },
+            editable: true
+          });
+        }
+        
+        function showCalendar() {
+          $('#calendar').html("");
+          $('#calendar').fullCalendar({
+            theme: true,
+            header: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'month,agendaWeek,agendaDay'
+            },
+            editable: true,
+            eventSources: [
+              "http://localhost:3000/calendars/1"
+            ]
+          });
+        }
+
       });
-  </script>
-  
-  <style type='text/css'>
-
-  body {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 13px;
-    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-    }
-
-  #calendar {
-    width: 900px;
-    margin: 0 auto;
-    }
-
-</style>
-  
+    </script>
   </head>
   <body>
-    <div id='calendar'></div>          
+
+    <div id="left_cal_options">
+      <input id ="calendar_check_box"type="checkbox" checked ="checked" name="vehicle" value="Bike"/>Calendar
+    </div>
+
+    <div id="calendar_container">
+      <div id='calendar'style="width:800px;"></div>
+    </div>
+
+    <div id="tasks_list">
+
+    </div>
+
   </body>
 </html>
