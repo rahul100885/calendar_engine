@@ -1,6 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :calendars
+  map.resources :calendars do |calendar|
+    calendar.resources :appointments
+    calendar.resources :todos
+  end
+
   map.root :controller => "calendars"
   # The priority is based upon order of creation: first created -> highest priority.
 

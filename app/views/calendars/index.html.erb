@@ -47,9 +47,10 @@
               center: 'title',
               right: 'month,agendaWeek,agendaDay'
             },
-            editable: true,
+          editable: false,
+          weekMode: 'liquid',
             eventSources: [
-              "http://localhost:3000/calendars/1"
+            "http://localhost:3000/calendars/1/appointments"
             ]
           });
         }
