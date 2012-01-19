@@ -47,10 +47,22 @@
               center: 'title',
               right: 'month,agendaWeek,agendaDay'
             },
-          editable: false,
-          weekMode: 'liquid',
+            editable: true
+          });
+        }
+        
+        function showCalendar() {
+          $('#calendar').html("");
+          $('#calendar').fullCalendar({
+            theme: true,
+            header: {
+              left: 'prev,next today',
+              center: 'title',
+              right: 'month,agendaWeek,agendaDay'
+            },
+            editable: true,
             eventSources: [
-            "http://localhost:3000/calendars/1/appointments"
+              "http://localhost:3000/calendars/1"
             ]
           });
         }
