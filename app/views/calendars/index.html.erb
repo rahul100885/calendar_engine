@@ -13,7 +13,6 @@
 
     <script type='text/javascript'>
       $(document).ready(function() {
-
         buildCalendar();
 
         $('#calendar_check_box').click(function(){
@@ -27,34 +26,19 @@
 
         var cal_appointments = {
           url: "http://localhost:3000/calendars/1/appointments",
-          cache: true,
           color: "blue"
         };
         
         function hideCalendar() {
-          $('#calendar').fullCalendar('removeEvents');         
-          editable: false,
-          weekMode: 'liquid',
+          $('#calendar').fullCalendar('removeEvents');
         }
         
         function showCalendar() {
-          $('#calendar').html("");
-          $('#calendar').fullCalendar({
-            theme: true,
-            header: {
-              left: 'prev,next today',
-              center: 'title',
-              right: 'month,agendaWeek,agendaDay'
-            },
+         $('#calendar').fullCalendar('addEventSource',cal_appointments);
         }
-        
-        function showCalendar() {
-          $('#calendar').fullCalendar('addEventSource',cal_appointments);
-        }
-       
+              
         
         function buildCalendar() {
-          $('#calendar').html("");
           $('#calendar').fullCalendar({
             theme: true,
             header: {
@@ -77,7 +61,7 @@
 
     <div id="left_cal_options">
         <% @calendars.each do |calendar|%>
-          <li style="list-style:none;"><%= check_box_tag calendar.name, calendar.name, true %> <%= calendar.name%></li>
+          <li style="list-style:none;"><%= check_box_tag calendar.name, calendar.name, true , {:id => 'calendar_check_box'} %> <%= calendar.name%></li>
         <% end %>
     </div>
 
