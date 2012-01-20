@@ -2,7 +2,7 @@ body {
   margin-top: 40px;
 }
 div#left_cal_options{
-  border: 1px solid black; 
+  /*border: 1px solid black; */
   width: 18%; height: 630px;
   float: left;
   text-align: left;  
@@ -17,7 +17,7 @@ div#calendar_container{
   font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
 }
 div#tasks_list{
-  border: 1px solid black;
+  /*border: 1px solid black;*/
   width: 20%;
   height: 630px;
   float: right;

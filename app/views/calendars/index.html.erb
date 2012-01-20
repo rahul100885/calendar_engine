@@ -61,7 +61,9 @@
   <body>
 
     <div id="left_cal_options">
-      <input id ="calendar_check_box"type="checkbox" checked ="checked" name="vehicle" value="Bike"/>Calendar
+        <% @calendars.each do |calendar|%>
+          <li style="list-style:none;"><%= check_box_tag calendar.name, calendar.name, true %> <%= calendar.name%></li>
+        <% end %>
     </div>
 
     <div id="calendar_container">
@@ -69,7 +71,6 @@
     </div>
 
     <div id="tasks_list">
-
     </div>
 
   </body>
