@@ -3,18 +3,18 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Calendar</title>
 
-    <%= stylesheet_link_tag "/plugins/fullcalendar/fullcalendar.css" %>
-    <%= stylesheet_link_tag "/plugins/fullcalendar/theme/theme.css" %>
-    <%= stylesheet_link_tag "/stylesheets/calendar.css" %>
+    <%= stylesheet_link_tag "/stylesheets/calendar/fullcalendar.css" %>
+    <%= stylesheet_link_tag "/stylesheets/calendar/theme.css" %>
+    <%= stylesheet_link_tag "/stylesheets/calendar_main.css" %>
 
-    <%= javascript_include_tag "custom_calendar.js" %>
-    <%= javascript_include_tag "/plugins/fullcalendar/jquery/jquery-1.5.2.min.js" %>
-    <%= javascript_include_tag "/plugins/fullcalendar/fullcalendar.js" %>
+    <%= javascript_include_tag "/javascripts/calendar/calendar_main.js" %>
+    <%= javascript_include_tag "/javascripts/calendar/jquery/jquery-1.5.2.min.js" %>
+    <%= javascript_include_tag "/javascripts/calendar/fullcalendar.js" %>
 
     <script type='text/javascript'>
       $(document).ready(function() {
 
-        showCalendar();
+        buildCalendar();
 
         $('#calendar_check_box').click(function(){
           if($('#calendar_check_box').attr('checked') == false ){           
@@ -25,15 +25,14 @@
           }
         });
 
+        var cal_appointments = {
+          url: "http://localhost:3000/calendars/1/appointments",
+          cache: true,
+          color: "blue"
+        };
+        
         function hideCalendar() {
-          $('#calendar').html("");
-          $('#calendar').fullCalendar({
-            theme: true,
-            header: {
-              left: 'prev,next today',
-              center: 'title',
-              right: 'month,agendaWeek,agendaDay'
-            },
+          $('#calendar').fullCalendar('removeEvents');         
           editable: false,
           weekMode: 'liquid',
         }
@@ -47,11 +46,14 @@
               center: 'title',
               right: 'month,agendaWeek,agendaDay'
             },
-            editable: true
-          });
         }
         
         function showCalendar() {
+          $('#calendar').fullCalendar('addEventSource',cal_appointments);
+        }
+       
+        
+        function buildCalendar() {
           $('#calendar').html("");
           $('#calendar').fullCalendar({
             theme: true,
@@ -60,10 +62,10 @@
               center: 'title',
               right: 'month,agendaWeek,agendaDay'
             },
-          editable: false,
-          weekMode: 'liquid',
+            editable: false,
+            weekMode: 'liquid',
             eventSources: [
-            "http://localhost:3000/calendars/1/appointments"
+              "http://localhost:3000/calendars/1/appointments"
             ]
           });
         }
