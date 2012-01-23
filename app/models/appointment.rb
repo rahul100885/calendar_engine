@@ -3,6 +3,8 @@ class Appointment < ActiveRecord::Base
   has_one :recurrence
   has_many :reminders, :as => :event
 
+  named_scope :appointments_range,  lambda { |*args| {:include => :recurrence, :conditions => {:calendar_id => args[0], :start_date => (args[1] .. args[2]) } } }
+
   def to_cal_json
     {:id => id,
      :title => title,
