@@ -25,16 +25,16 @@
         });
 
         var cal_appointments = {
-          url: "/calendars/1/appointments",
-          color: "blue"
+          url: "/calendars/1/appointments"
         };
         
         function hideCalendar() {
           $('#calendar').fullCalendar('removeEvents');
+          $('#calendar').fullCalendar('removeEventSource',cal_appointments);
         }
         
         function showCalendar() {
-         $('#calendar').fullCalendar('addEventSource',cal_appointments);
+          $('#calendar').fullCalendar('addEventSource',cal_appointments);
         }
               
         
@@ -60,9 +60,9 @@
   <body>
 
     <div id="left_cal_options">
-        <% @calendars.each do |calendar|%>
-          <li style="list-style:none;"><%= check_box_tag calendar.name, calendar.name, true , {:id => 'calendar_check_box'} %> <%= calendar.name%></li>
-        <% end %>
+      <% @calendars.each do |calendar|%>
+        <li style="list-style:none;"><%= check_box_tag calendar.name, calendar.name, true , {:id => 'calendar_check_box'} %> <%= calendar.name%></li>
+      <% end %>
     </div>
 
     <div id="calendar_container">
