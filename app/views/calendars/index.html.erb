@@ -2,66 +2,21 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Calendar</title>
-
     <%= stylesheet_link_tag "/stylesheets/calendar/fullcalendar.css" %>
     <%= stylesheet_link_tag "/stylesheets/calendar/theme.css" %>
     <%= stylesheet_link_tag "/stylesheets/calendar_main.css" %>
 
-    <%= javascript_include_tag "/javascripts/calendar/calendar_main.js" %>
     <%= javascript_include_tag "/javascripts/calendar/jquery/jquery-1.5.2.min.js" %>
+    <%= javascript_include_tag "/javascripts/calendar/calendar_main.js" %>
     <%= javascript_include_tag "/javascripts/calendar/fullcalendar.js" %>
-
-    <script type='text/javascript'>
-      $(document).ready(function() {
-        buildCalendar();
-
-        $('#calendar_check_box').click(function(){
-          if($('#calendar_check_box').attr('checked') == false ){           
-            hideCalendar();
-          }
-          else{
-            showCalendar();
-          }
-        });
-
-        var cal_appointments = {
-          url: "/calendars/1/appointments"
-        };
-        
-        function hideCalendar() {
-          $('#calendar').fullCalendar('removeEvents');
-          $('#calendar').fullCalendar('removeEventSource',cal_appointments);
-        }
-        
-        function showCalendar() {
-          $('#calendar').fullCalendar('addEventSource',cal_appointments);
-        }
-              
-        
-        function buildCalendar() {
-          $('#calendar').fullCalendar({
-            theme: true,
-            header: {
-              left: 'prev,next today',
-              center: 'title',
-              right: 'month,agendaWeek,agendaDay'
-            },
-            editable: false,
-            weekMode: 'liquid',
-            eventSources: [
-              "/calendars/1/appointments"
-            ]
-          });
-        }
-
-      });
-    </script>
   </head>
   <body>
 
     <div id="left_cal_options">
       <% @calendars.each do |calendar|%>
-        <li style="list-style:none;"><%= check_box_tag calendar.name, calendar.name, true , {:id => 'calendar_check_box'} %> <%= calendar.name%></li>
+        <li style="list-style:none;" class="calendar_check_boxes_set">
+          <%= check_box_tag calendar.name, calendar.name, true , {:id => calendar.id.to_s,:onclick => "toggleSource(this);"} %> <%= calendar.name%>
+        </li>
       <% end %>
     </div>
 
