@@ -1,0 +1,63 @@
+<p>
+  <b>Title:</b>
+  <%=h @appointment.title %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @appointment.location %>
+</p>
+
+<p>
+  <b>Show as:</b>
+  <%=h @appointment.show_as %>
+</p>
+
+<p>
+  <b>Mark as:</b>
+  <%=h @appointment.mark_as %>
+</p>
+
+<p>
+  <b>All day:</b>
+  <%=h @appointment.all_day %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @appointment.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%=h @appointment.end_date %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%=h @appointment.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%=h @appointment.end_time %>
+</p>
+
+<p>
+  <b>Calendar:</b>
+  <%=h @appointment.calendar_id %>
+</p>
+
+<p>
+  <b>Attendees:</b>
+  <%=h @appointment.attendees %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @appointment.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_calendar_appointment_path(@calendar, @appointment) %> |
+<%= link_to 'Back', calendar_appointments_path %>

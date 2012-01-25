@@ -1,0 +1,40 @@
+<h1>Listing appointments</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Location</th>
+    <th>Show as</th>
+    <th>Mark as</th>
+    <th>All day</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Start time</th>
+    <th>End date</th>
+    <th>Attendees</th>
+    <th>Description</th>
+  </tr>
+
+<% @appointments.each do |appointment| %>
+  <tr>
+    <td><%=h appointment.title %></td>
+    <td><%=h appointment.location %></td>
+    <td><%=h appointment.show_as %></td>
+    <td><%=h appointment.mark_as %></td>
+    <td><%=h appointment.all_day %></td>
+    <td><%=h appointment.start_date %></td>
+    <td><%=h appointment.end_date %></td>
+    <td><%=h appointment.start_time %></td>
+    <td><%=h appointment.end_date %></td>
+    <td><%=h appointment.attendees %></td>
+    <td><%=h appointment.description %></td>
+    <td><%= link_to 'Show', calendar_appointment_path(@calendar, appointment) %></td>
+    <td><%= link_to 'Edit', edit_calendar_appointment_path(@calendar, appointment) %></td>
+    <td><%= link_to 'Destroy', calendar_appointment_path(@calendar, appointment), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New appointment', new_calendar_appointment_path(@calendar) %>

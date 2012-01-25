@@ -11,7 +11,7 @@ class CreateAppointments < ActiveRecord::Migration
       t.time :start_time
       t.time :end_time
       t.text :attendees
-      t.string :description
+      t.text :description
       t.references :calendar
 
       t.timestamps
