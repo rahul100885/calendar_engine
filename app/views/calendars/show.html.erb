@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @calendar.name %>
+</p>
+
+<p>
+  <b>Calendar Type:</b>
+  <%=h @calendar.cal_type %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @calendar.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_calendar_path(@calendar) %> |
+<%= link_to 'Back', calendars_path %>

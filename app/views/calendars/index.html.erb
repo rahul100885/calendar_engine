@@ -13,16 +13,21 @@
   <body>
 
     <div id="left_cal_options">
-      <p> <h2>Calendars</h2> </p>
+      <div> <h2>Calendars</h2> </div>
+      <div> <%= link_to 'create', new_calendar_path, {:style => "float:right"} %> </div>
       <% @calendars.each do |calendar|%>
         <li style="list-style:none;" class="calendar_check_boxes_set">
-          <%= check_box_tag calendar.name, calendar.name, true , {:id => calendar.id.to_s,:onclick => "toggleSource(this);"} %> <%= calendar.name%>
+          <%= check_box_tag calendar.name , calendar.name, true , {:id => calendar.id.to_s,:onclick => "toggleSource(this);"} %> <%= link_to calendar.name, edit_calendar_path(calendar)%>
         </li>
       <% end %>
     </div>
 
     <div id="calendar_container">
-      <div id='calendar'style="width:800px;"></div>
+      <div class="fc-button fc-button-today ui-state-default ui-corner-left ui-corner-right" style="float:right; margin-bottom: 10px;">
+        <%= link_to '+', new_calendar_appointment_path(@calendars.first),{:class => "fc-button-content",:style => "width:10px;"} %>
+      </div>
+
+      <div id='calendar'style="width:100%;"></div>
     </div>
 
     <div id="tasks_list">
