@@ -9,8 +9,8 @@ class AppointmentsController < ApplicationController
 
     events = []
 
-    @appointments.each do |event|
-      events << event.to_cal_json
+    @appointments.each do |appointment|
+      events << to_event(appointment)
     end
 
     respond_to do |format|
@@ -81,5 +81,17 @@ class AppointmentsController < ApplicationController
       format.html { redirect_to(appointments_url) }
       format.xml  { head :ok }
     end
+  end
+
+  private
+
+  def to_event(appointment)
+    {:id => appointment.id,
+     :title => appointment.title,
+     :start => appointment.start_time ? "#{appointment.start_date}T#{appointment.start_time.strftime("%T")}Z" : appointment.start_date,
+     :end => appointment.end_time ? "#{appointment.end_date}T#{appointment.end_time.strftime("%T")}Z" : appointment.end_date,
+     :allDay => appointment.all_day,
+     :url => edit_calendar_appointment_path(appointment.calendar_id, appointment) 
+    }
   end
 end

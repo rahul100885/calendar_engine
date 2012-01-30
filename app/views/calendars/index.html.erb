@@ -13,6 +13,7 @@
   <body>
 
     <div id="left_cal_options">
+      <p> <h2>Calendars</h2> </p>
       <% @calendars.each do |calendar|%>
         <li style="list-style:none;" class="calendar_check_boxes_set">
           <%= check_box_tag calendar.name, calendar.name, true , {:id => calendar.id.to_s,:onclick => "toggleSource(this);"} %> <%= calendar.name%>
