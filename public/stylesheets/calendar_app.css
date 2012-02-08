@@ -1,0 +1,63 @@
+body{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+div#container{
+  position:relative;
+  //border:1px solid black;
+}
+
+div#left_menus{ 
+  width:20%;
+  position:relative;
+  //border:1px solid black;
+  float:left;
+  height:100%;
+  //background-color:#30BAC9;
+}
+
+div#right-box{
+  width:79%;
+  position:relative;
+  //border:1px solid black;
+  float:left;
+  height:100%;
+}
+
+div#header_controls{
+  width:100%;
+  height:10%;
+  position:relative;
+  //border:1px solid black;
+  //background-color:#94D7E0;
+}
+
+div#event_container{
+  width:100%;
+  height:100%;
+  position:relative;
+  //border:1px solid black;
+}
+
+div#appointment_container{
+  width:75%;
+  height:80%;
+  position:relative;
+  //border:1px solid black;
+  float:left;
+  //background-color:#B2EDED;
+}
+
+div#task_container{
+  width:25%;
+  height:80%;
+  position:relative;
+  //border:1px solid black;
+  float:right;
+  //background-color:#C1F5F5;
+}
+li a{
+  display: inline;
+}
+
