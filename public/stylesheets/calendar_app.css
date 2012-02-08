@@ -3,6 +3,14 @@ body{
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.rounded{
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  //background-color:#E3D2CF; 
+}
+
 div#container{
   position:relative;
   //border:1px solid black;
@@ -14,7 +22,7 @@ div#left_menus{
   //border:1px solid black;
   float:left;
   height:100%;
-  //background-color:#30BAC9;
+  background-color:#E3D2CF;
 }
 
 div#right-box{
@@ -30,7 +38,7 @@ div#header_controls{
   height:10%;
   position:relative;
   //border:1px solid black;
-  //background-color:#94D7E0;
+  background-color:#E3D2CF;
 }
 
 div#event_container{
@@ -51,11 +59,11 @@ div#appointment_container{
 
 div#task_container{
   width:25%;
-  height:80%;
+  height:90%;
   position:relative;
   //border:1px solid black;
   float:right;
-  //background-color:#C1F5F5;
+  background-color: #EDFFFB;
 }
 li a{
   display: inline;

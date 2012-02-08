@@ -16,6 +16,13 @@ class AppointmentsController < ApplicationController
     respond_to do |format|
       format.html
       format.js { render :json => events.to_json }
+      
+      format.ics {
+        ical = RiCal.Calendar do |cal|
+          @appointments.each { |event| cal.add_subcomponent(event.to_ri_cal) }
+        end
+        send_data ical.to_s, :filename => "events_by.ics", :type => "text/calendar"
+      }
     end
   end
   
