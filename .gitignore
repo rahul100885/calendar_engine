@@ -1,10 +1,10 @@
 .rvm
 
 #ignore netbeans files
-/nbproject
+nbproject
 
 #database file
-/config/database.yml
+config/database.yml
 
 #ignore log files
-/log/*
+log/*
