@@ -4,7 +4,9 @@ $(document).ready(function() {
   $('.calendar_check_boxes_set').each(function(index,Element){
     showCalendar($(this).find("input[type=checkbox]").attr('id'));
   });
-
+  
+  $(".fc-header").remove();
+  
   bindEventToCalendar();
 });
 
@@ -47,28 +49,25 @@ function buildCalendar() {
 }
 
 function bindEventToCalendar(){
-  $('#calendar_prev').click( function() {
-    calObj.fullCalendar('prev');
-  });
 
-  $('#calendar_next').click( function() {
+  //Custom Button Controls for the Calendar
+  $('.fc-button-prev').click(function(){
+     calObj.fullCalendar('prev');
+  });
+  $('.fc-button-next').click(function(){
     calObj.fullCalendar('next');
   });
-
-  $('#calendar_today').click( function() {
+  $('.fc-button-today').click(function() {
     calObj.fullCalendar('today');
   });
-
-  $('#calendar_monthview').click( function() {
-    calObj.fullCalendar('changeView', 'month');
+  $('.fc-button-month').click(function(){
+    calObj.fullCalendar( 'changeView','month');
   });
-
-  $('#calendar_weekview').click( function() {
-    calObj.fullCalendar('changeView', 'agendaWeek');
+  $('.fc-button-agendaWeek').click(function(){
+     calObj.fullCalendar( 'changeView','agendaWeek');
   });
-
-  $('#calendar_dayview').click( function() {
-    calObj.fullCalendar('changeView', 'agendaDay');
+  $('.fc-button-agendaDay').click(function(){
+     calObj.fullCalendar( 'changeView','agendaDay');
   });
 
   $('#calendar_title').text("ok");

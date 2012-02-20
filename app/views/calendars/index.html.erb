@@ -1,52 +1,61 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"/>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Calendar</title>
     <%= stylesheet_link_tag "/stylesheets/calendar/fullcalendar.css" %>
     <%= stylesheet_link_tag "/stylesheets/calendar/theme.css" %>
-    <%#= stylesheet_link_tag "/stylesheets/calendar_main.css" %>
+    <%= stylesheet_link_tag "/stylesheets/calendar_main.css" %>
 
     <%= javascript_include_tag "/javascripts/calendar/jquery/jquery-1.5.2.min.js" %>
     <%= javascript_include_tag "/javascripts/calendar/calendar_main.js" %>
-    <%= javascript_include_tag "/javascripts/calendar/fullcalendar.js" %>    
-    
-    
-    <%= stylesheet_link_tag "/stylesheets/calendar_app.css" %>
+    <%= javascript_include_tag "/javascripts/calendar/fullcalendar.js" %>
   </head>
-  
   <body>
-    <div id="container">    
-      <div id="left_menus" class="rounded">
-        <div id="left_cal_options">
-          <div> Calendars </div>
-          <div> 
-            <%#= link_to 'create', new_calendar_path, {:style => "float:right"} %> 
-            <% @calendars.each do |calendar|%>
-              <li style="list-style:none;" class="calendar_check_boxes_set">
-                <%= check_box_tag calendar.name , calendar.name, true , {:id => calendar.id.to_s,:onclick => "toggleSource(this);"} %> <%= link_to calendar.name, edit_calendar_path(calendar)%>
-              </li>
-            <% end %>
-          </div>
+    <div id="page-wrap">
+
+      <div id="calendar-controls" >
+<%#*<div class="fc-button fc-button-today ui-state-default ui-corner-left ui-corner-right" style="float:right; margin-bottom: 10px;">%>
+<%#= link_to '+', new_calendar_appointment_path(@calendars.first),{:class => "fc-button-content",:style => "width:10px;"} %>
+<%#*</div>%>
+        <div class="calendar-title">
+          <h3>Calendar</h3>
+        </div>
+
+        <div class="calendar-nav"><span class="fc-button fc-button-prev ui-state-default ui-corner-left"><span class="fc-button-inner"><span class="fc-button-content"><span class="fc-icon-wrap"><span class="ui-icon ui-icon-circle-triangle-w"></span></span></span><span class="fc-button-effect"><span></span></span></span></span><span class="fc-button fc-button-next ui-state-default ui-corner-right"><span class="fc-button-inner"><span class="fc-button-content"><span class="fc-icon-wrap"><span class="ui-icon ui-icon-circle-triangle-e"></span></span></span><span class="fc-button-effect"><span></span></span></span></span><span class="fc-header-space"></span>
+          <span class="fc-button fc-button-today ui-state-default ui-corner-left ui-corner-right ui-state-disabled"><span class="fc-button-inner"><span class="fc-button-content">today</span><span class="fc-button-effect"><span></span></span></span></span>
+        </div>
+
+        <div id="calendar-date-range">
+          <h3>Calendar</h3>
+        </div>
+
+        <div id="calendar-custom-controls-views-options">
+          <span class="fc-button fc-button-month ui-state-default ui-corner-left ui-state-active"><span class="fc-button-inner"><span class="fc-button-content">month</span><span class="fc-button-effect"><span></span></span></span></span><span class="fc-button fc-button-agendaWeek ui-state-default"><span class="fc-button-inner"><span class="fc-button-content">week</span><span class="fc-button-effect"><span></span></span></span></span><span class="fc-button fc-button-agendaDay ui-state-default ui-corner-right"><span class="fc-button-inner"><span class="fc-button-content">day</span><span class="fc-button-effect"><span></span></span></span></span>
         </div>
       </div>
-      <div id="right-box">
-        <div id="header_controls" class="rounded">
-          <label id="calendar_title"></label>
 
-          <button id="calendar_prev" class="calendar_title">prev</button>
-          <button id="calendar_next" class="calendar_title">next</button>
-          <button id="calendar_today" class="calendar_title">today</button>
-          <button id="calendar_monthview" class="calendar_title">Month</button>
-          <button id="calendar_weekview" class="calendar_title">Week</button>
-          <button id="calendar_dayview" class="calendar_title">Day</button>
+      <div id="left_cal_options" class="rounded-grey-border">
+        <div class="calendars-list">
+          <%= link_to 'Create', new_calendar_path%>
+          <% @calendars.each do |calendar|%>
+            <li style="list-style:none;" class="calendar_check_boxes_set">
+              <%= check_box_tag calendar.name , calendar.name, true , {:id => calendar.id.to_s,:onclick => "toggleSource(this);"} %> <%= link_to calendar.name, edit_calendar_path(calendar)%>
+            </li>
+          <% end %>
         </div>
-        <div id="event_container">
-          <div id="appointment_container" class="rounded">
-            <div id='calendar'style="width:100%;"></div>
-          </div>
-          <div id="task_container" class="rounded">Task</div>
-        </div>   
-      </div>   
+      </div>
+
+      <div id="calendar_container" >
+        <div id='calendar'style="width:745px;"></div>
+      </div>
+
+      <div id="right-container" class="rounded-grey-border">
+        <div id="tasks_list">
+        </div>
+      </div>
+
     </div>
   </body>
 </html>
